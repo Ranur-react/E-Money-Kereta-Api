@@ -16,6 +16,10 @@ class M_rfid extends CI_Model
     {
         return $this->db->query("SELECT*FROM `tb_kartu` WHERE `nama` IS NOT NULL");
     }
+    function get_SaldoData($idcard)
+    {
+        return $this->db->query("SELECT VALUE FROM `tb_kartu`WHERE `id_card`='$idcard';");
+    }
 
     public function getAll()
     {

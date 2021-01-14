@@ -28,6 +28,14 @@ public function newindex()
         );
         $this->load->view('home_admin',$data);
     }
+    public function CekSaldo()
+    {
+        $data = $this->rfid->get_SaldoData('F9B2A5A3');
+        foreach ($data->result_array() as $d) {
+        echo $d['value'];
+
+        }
+    }
     public function add()
     {
         $this->rfid->save();
